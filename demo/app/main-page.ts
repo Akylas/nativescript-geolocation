@@ -14,13 +14,8 @@ export function pageLoaded(args: EventData) {
 }
 
 export function enableLocationTap() {
-    geolocation.isEnabled().then(function (isEnabled) {
-        if (!isEnabled) {
-            geolocation.enableLocationRequest().then(function () {
-            }, function (e) {
-                console.log("Error: " + (e.message || e));
-            });
-        }
+    geolocation.enableLocationRequest().then(function () {
+        console.log('ok');
     }, function (e) {
         console.log("Error: " + (e.message || e));
     });
